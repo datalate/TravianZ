@@ -109,7 +109,7 @@ UPDATE %PREFIX%units u
     JOIN %PREFIX%odata o
     ON u.vref = o.wref
     SET
-        u35 = u35 + (FLOOR(10 + RAND() * 10)),
+        u35 = u35 + (FLOOR(5 + RAND() * 10)),
         u36 = u36 + (FLOOR(0 + RAND() * 5)),
         u37 = u37 + (FLOOR(0 + RAND() * 5))
     WHERE
@@ -163,7 +163,7 @@ UPDATE %PREFIX%units u
         u35 = u35 + (FLOOR(5 + RAND() * 15)),
         u36 = u36 + (FLOOR(0 + RAND() * 5)),
         u37 = u37 + (FLOOR(0 + RAND() * 5)),
-        u40 = u40 + (FLOOR(0 + RAND() * 3))
+        u40 = MIN(u40 + (FLOOR(0 + RAND() * 2)), 1)
     WHERE
         (
             (
@@ -264,9 +264,9 @@ UPDATE %PREFIX%units u
     ON u.vref = o.wref
     SET
         u31 = u31 + (FLOOR(15 + RAND() * 15)),
-        u32 = u32 + (FLOOR(0 + RAND() * 5)),
-        u35 = u35 + (FLOOR(0 + RAND() * 5)),
-        u40 = u40 + (FLOOR(0 + RAND() * 3))
+        u32 = u32 + (FLOOR(5 + RAND() * 10)),
+        u35 = u35 + (FLOOR(0 + RAND() * 10)),
+        u40 = MIN(u40 + (FLOOR(0 + RAND() * 2)), 1)
     WHERE
         (
             (
@@ -369,7 +369,7 @@ UPDATE %PREFIX%units u
         u31 = u31 + (FLOOR(15 + RAND() * 20)),
         u32 = u32 + (FLOOR(10 + RAND() * 15)),
         u34 = u34 + (FLOOR(0 + RAND() * 10)),
-        u40 = u40 + (FLOOR(0 + RAND() * 3))
+        u40 = MIN(u40 + (FLOOR(0 + RAND() * 2)), 1)
     WHERE
         (
             (
@@ -481,7 +481,7 @@ UPDATE %PREFIX%units u
         u33 = u33 + (FLOOR(5 + RAND() * 10)),
         u38 = u38 + (FLOOR(0 + RAND() * 5)),
         u39 = u39 + (FLOOR(0 + RAND() * 5)),
-        u40 = u40 + (FLOOR(0 + RAND() * 3))
+        u40 = MIN(u40 + (FLOOR(0 + RAND() * 2)), 1)
     WHERE
         (
             (
